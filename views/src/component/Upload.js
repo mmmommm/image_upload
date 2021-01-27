@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Card, Modal, Button } from "react-bootstrap";
 import axios from "axios";
 
 
@@ -44,11 +44,18 @@ const Upload = () => {
 
   return (
     <>
-      <button className="btn btn-primary m-2" onClick={handleShow}>
-        {" "}
-        Upload
-      </button>
-
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>Upload your image</Card.Title>
+          <Card.Text>
+            File should be jpeg or png ...
+          </Card.Text>
+          <button className="btn btn-primary m-2" onClick={handleShow}>
+            {" "}
+            Upload
+          </button>
+        </Card.Body>
+      </Card>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Upload Image</Modal.Title>
