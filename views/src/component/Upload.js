@@ -21,7 +21,7 @@ const Upload = () => {
       formData.append("picture", image, image.name);
       formData.append("desc", description);
 
-      let res = await axios.post("/api/upload", formData);
+      await axios.post("/api/upload", formData);
       setError(false);
       handleClose();
     } catch (error) {
@@ -35,7 +35,8 @@ const Upload = () => {
       return (
         <h5>
           {" "}
-          <em> {image.name} </em>{" "}
+            <em> {image.name} </em>
+          {" "}
         </h5>
       );
 
