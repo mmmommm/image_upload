@@ -1,10 +1,11 @@
 const Image = require("../models/Image.js");
 const getImages = async (req, res) => {
   try {
-    let images = await Image.find({}, " -__v");
-    return res.status(200).json({ images, msg: "image info fetched"    });
+    let images = await Image.find();
+    console.log(images)
+    return res.status(200).json({ images, msg: "image info fetched" });
   } catch (error) {
-    console.error(error);
+    console.log("catch an error");
     return res.status(500).json({ error: "some error occured" });
   }
 };
